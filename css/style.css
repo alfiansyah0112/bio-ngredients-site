@@ -197,18 +197,10 @@ body[data-page="contact"]  .nav-contact { color: var(--forest-2); }
     inset 0 -30px 80px rgba(30, 51, 32, 0.6),
     inset 0 20px 60px rgba(245, 240, 230, 0.25),
     0 30px 80px -20px rgba(30, 51, 32, 0.45);
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  animation: orbBreathe 11s ease-in-out infinite;
 }
 .hero-orb::before {
   content: ""; position: absolute; inset: 0; border-radius: 50%;
   background: radial-gradient(circle at 70% 80%, rgba(30,51,32,0.45), transparent 55%);
-}
-@keyframes orbBreathe {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50%      { transform: translate3d(0, 0, 0) scale(1.018); }
 }
 
 .hero-leaf {
@@ -217,25 +209,9 @@ body[data-page="contact"]  .nav-contact { color: var(--forest-2); }
   background: var(--moss);
   border-radius: 50% 0 50% 0;
   opacity: 0.82;
-  will-change: transform;
-  backface-visibility: hidden;
 }
-.hero-leaf.l1 {
-  top: -8%; left: -6%;
-  animation: leafSwayA 8s ease-in-out infinite;
-}
-.hero-leaf.l2 {
-  bottom: -4%; right: -7%;
-  animation: leafSwayB 9s ease-in-out infinite -2s;
-}
-@keyframes leafSwayA {
-  0%, 100% { transform: rotate(-22deg) translate3d(0, 0, 0); }
-  50%      { transform: rotate(-17deg) translate3d(0, -18px, 0); }
-}
-@keyframes leafSwayB {
-  0%, 100% { transform: rotate(158deg) translate3d(0, 0, 0); }
-  50%      { transform: rotate(153deg) translate3d(0, -14px, 0); }
-}
+.hero-leaf.l1 { top: -8%; left: -6%; rotate: -22deg; }
+.hero-leaf.l2 { bottom: -4%; right: -7%; rotate: 158deg; }
 
 .hero-stats {
   display: flex; gap: 2rem; margin-top: 3rem;
